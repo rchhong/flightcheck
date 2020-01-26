@@ -27,7 +27,7 @@ class ListButton extends Component {
             <>
                 <TouchableOpacity onPress={this.onPress.bind(this)} style={{backgroundColor: "#FFFFFF", flexDirection: "row", alignItems: 'center', justifyContent: 'space-between'}}>
                     <View style={{flex: 1}}>
-                        <Image style={{width: 80, height: 80, borderRadius: 40}} source={require("../resources/asdf.jpg")} />
+                        <Image style={{width: 80, height: 80, borderRadius: 40}} source={this.props.source} />
                     </View>
                     <View style={{flex: 4, alignItems: "center", justifyContent: 'center'}}>
                         <Text>{this.props.title}</Text>

@@ -9,28 +9,57 @@ import {
   FlatList
 } from 'react-native';
 
+import WeatherIcon from './WeatherIcon'
+
 class Weather extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        icons: [],
+        ready: false,
+      }
+    } 
+
+    componentDidMount() {
+      console.log(this.props.data);
+      let allCombo = [{"weather" : "Cold", weatherIcon : require('../resources/asdf.jpg')}, {"weather" : "Hot", weatherIcon : require('../resources/asdf.jpg')}, 
+      {"weather" : "Rain", weatherIcon : require('../resources/asdf.jpg')}, {"weather" : "Snows", weatherIcon : require('../resources/asdf.jpg')}];
+      let correct = [];
+      if(this.props.data["cold"]) {
+        correct.push(allCombo[0]);
+      }
+      if(this.props.data["hot"]) {
+        correct.push(allCombo[1]);
+      }
+      if(this.props.data["rain"]) {
+        correct.push(allCombo[2]);
+      }
+      if(this.props.data["snow"]) {
+        correct.push(allCombo[3]);
+      }
+
+      this.setState({icons: correct}, () => {this.setState({ready: true})})
+
+
+    }
+
     render() {
       return (
-        <View style={{flex: 1, backgroundColor: "#FFc0cb", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
-          <View style={{height: "100%", flex: 1, backgroundColor: "#FF0000", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-            <Image style={{width: 50, height: 50}}source={require('../resources/asdf.jpg')} />
-            <Text>Hot</Text>
+        <>
+        {
+          this.state.ready && (
+            <View style={{flex: 1, backgroundColor: "#FFc0cb", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+            {
+              this.state.icons.map((item, index) => {
+                return <WeatherIcon weather={item.weather} icon={item.weatherIcon} key={index} />
+              })          
+            }
           </View>
-          <View style={{height: "100%", flex: 1, backgroundColor: "#443355", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-          <Image style={{width: 50, height: 50}}source={require('../resources/asdf.jpg')} />
-            <Text>Cold</Text>
-          </View>
-          <View style={{height: "100%", flex: 1, backgroundColor: "#98ff33", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-          <Image style={{width: 50, height: 50}}source={require('../resources/asdf.jpg')} />
-            <Text>Snow</Text>
-          </View>
-          <View style={{height: "100%", flex: 1, backgroundColor: "#887766", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-          <Image style={{width: 50, height: 50}}source={require('../resources/asdf.jpg')} />
-            <Text>Rain</Text>
-          </View>
-        </View>
-      );
+          )
+        }
+        </>
+
+        );
     }
 }
 

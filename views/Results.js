@@ -19,6 +19,7 @@ import {
 
 import TopBar from './TopBar'
 import ListButton from './ListButton'
+import Weather from './Weather'
 
 const DATA = [
   {
@@ -61,8 +62,7 @@ const DATA = [
 
 class App extends Component {
     componentDidMount() {
-        let data = this.props.navigation.getParam('rain', false);
-        console.log(data);
+        console.log(this.props.navigation.state.params);
     }
 
   render() {
@@ -74,7 +74,7 @@ class App extends Component {
             <TopBar />
           </View>
           <View style={{flex: 1, backgroundColor: "#00FF00"}}>
-
+            <Weather />
           </View>
           <View style={{flex: 4, backgroundColor: "#0000FF"}}>
             <FlatList 

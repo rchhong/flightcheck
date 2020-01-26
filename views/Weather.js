@@ -22,21 +22,17 @@ class Weather extends Component {
 
     componentDidMount() {
       console.log(this.props.data);
-      let allCombo = [{"weather" : "Cold", weatherIcon : require('../resources/asdf.jpg')}, {"weather" : "Hot", weatherIcon : require('../resources/asdf.jpg')}, 
-      {"weather" : "Rain", weatherIcon : require('../resources/asdf.jpg')}, {"weather" : "Snows", weatherIcon : require('../resources/asdf.jpg')}];
-      let correct = [];
-      if(this.props.data["cold"]) {
+      let allCombo = [{"weather" : "Rain", weatherIcon : require('../resources/asdf.jpg')}, {"weather" : "Snows", weatherIcon : require('../resources/asdf.jpg')}];
+      let correct = [{"weather" : `Max: ${this.props.data.max}`, weatherIcon : require('../resources/asdf.jpg')}, {"weather" : `Min: ${this.props.data.min}`, weatherIcon : require('../resources/asdf.jpg')}];
+
+      if(this.props.data["rain"]) {
         correct.push(allCombo[0]);
       }
-      if(this.props.data["hot"]) {
+      if(this.props.data["snow"]) {
         correct.push(allCombo[1]);
       }
-      if(this.props.data["rain"]) {
-        correct.push(allCombo[2]);
-      }
-      if(this.props.data["snow"]) {
-        correct.push(allCombo[3]);
-      }
+
+      
 
       this.setState({icons: correct}, () => {this.setState({ready: true})})
 

@@ -2,12 +2,23 @@ import React, { Component } from 'react'
 import DatePicker from 'react-native-datepicker'
  
 export default class MyDatePicker extends Component {
-  constructor(props){
-    super(props)
-    this.state = {date:"2020-01-26"}
-      this.props.callback({date:"2020-01-26"})
+  
+    constructor(props){
+    super(props);
+    let currDate = new Date();
+    let formattedMonth = currDate.getMonth() < 10 ? "0" + (currDate.getMonth() + 1) : currDate.getMonth() + 1;
+    let formattedDate = currDate.getDate() < 10 ? "0" + currDate.getDate() : currDate.getDate();
+    let res = `${currDate.getFullYear()}-${formattedMonth}-${formattedDate}`;
+    console.log(res);
+
+    this.state = {date : res}
+    this.props.callback({date: res})
   }
- 
+
+  update(date) {
+      this.setState({date});
+      this.props.callback({date})
+  }
   render(){
     return (
       <DatePicker
@@ -32,7 +43,7 @@ export default class MyDatePicker extends Component {
 
           // ... You can check the source to find the other keys.
         }}
-        onDateChange={(date) => {this.props.callback(date)}}
+        onDateChange={(date) => {this.update(date)}}
       />
     )
   }

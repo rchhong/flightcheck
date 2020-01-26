@@ -8,22 +8,33 @@ import {
 } from 'react-native';
 
 class Loading extends Component {
+
     componentDidMount() {
-        fetch("http://api.openweathermap.org/data/2.5/forecast?appid=69ac8835b32b2d1e25552a9d3e29058f&id=4671654&units=imperial&q=Houston,us")
+        let city = this.props.navigation.getParam('destination', 'Houston');
+
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?appid=69ac8835b32b2d1e25552a9d3e29058f&id=4671654&units=imperial&q=${city},us`)
         .then(res => res.json())
         .then(res => {
-            //console.log(res.list[0].weather[0].id)
+            let numDays = this.props.navigation.getParam('days', 0);
+            let foo = new Date();
+
+            foo.setHours(0, 0, 0, 0);
+            let stop = foo.getTime() + numDays * 24 * 60 * 60 * 1000;
+            let data = {city, snow: false, rain: false, min: Number.MAX_VALUE, max: Number.MIN_VALUE}
+            //console.log(res.list.length);
+            let min = Number.MAX_VALUE
+            let max =  Number.MIN_VALUE
             for(let i = 0; i < res.list.length; i++) {
-                let data = {snow: false, rain: false, cold: false, hot: false}
                 console.log("i: " + i + " " + res.list[i].weather[0].id)
-                const COLD_THRESHOLD = 60;
-                const HOT_THRESHOLD = 80;
                 let temp = res.list[i].main.feels_like;
-                if(temp <= COLD_THRESHOLD) {
-                    data['cold'] = true;
+                let date = res.list[i].dt;
+                if(date >= stop) break;
+
+                if(temp <= min) {
+                    min = temp
                 }
-                if(temp >= HOT_THRESHOLD) {
-                    data['hot'] = true;
+                if(temp >= max) {
+                    max = temp;
                 }
 
                 let weather = res.list[i].weather[0].id/100;
@@ -39,8 +50,12 @@ class Loading extends Component {
                         data['snow'] = true;
                         break;
                 }
-                return data;
+
             }
+            data.min = min;
+            data.max = max;
+            console.log(data);
+            return data;
         }).then( data => this.props.navigation.navigate('Results', data)
         );
     }

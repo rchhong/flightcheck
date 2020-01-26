@@ -6929,6 +6929,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-native-swipe-gestures@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "react-native-swipe-gestures@npm:1.0.4"
+  checksum: c35550f74e0c1aefd8d5ee6125d700a4c2a9fc5aabdc4c40f79c96e651ea50a29130e0356db291e134dcb808b193aa329c35bd43d9ab2deeefe13310f9c429c0
+  languageName: node
+  linkType: hard
+
 "react-native@npm:0.61.5":
   version: 0.61.5
   resolution: "react-native@npm:0.61.5"
@@ -8107,6 +8114,7 @@ resolve@1.1.7:
     react: 16.9.0
     react-native: 0.61.5
     react-native-gesture-handler: ^1.5.3
+    react-native-swipe-gestures: ^1.0.4
     react-navigation: ^4.0.10
     react-test-renderer: 16.9.0
   languageName: unknown

@@ -160,6 +160,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:16.9.0"],
             ["react-native", "virtual:5dd2f1855599591e6e11dfbaad2edb684da66f9371f8c1935050893f342ddb16531db25b600a3a1d7d187cf6ee358f658de5b5577034c63f27090b4efd87930a#npm:0.61.5"],
             ["react-native-gesture-handler", "npm:1.5.3"],
+            ["react-native-swipe-gestures", "npm:1.0.4"],
             ["react-navigation", "virtual:5dd2f1855599591e6e11dfbaad2edb684da66f9371f8c1935050893f342ddb16531db25b600a3a1d7d187cf6ee358f658de5b5577034c63f27090b4efd87930a#npm:4.0.10"],
             ["react-test-renderer", "virtual:5dd2f1855599591e6e11dfbaad2edb684da66f9371f8c1935050893f342ddb16531db25b600a3a1d7d187cf6ee358f658de5b5577034c63f27090b4efd87930a#npm:16.9.0"]
           ],
@@ -8591,6 +8592,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"
         }]
       ]],
+      ["react-native-swipe-gestures", [
+        ["npm:1.0.4", {
+          "packageLocation": "./.yarn/cache/react-native-swipe-gestures-npm-1.0.4-ac76f65fa7-1.zip/node_modules/react-native-swipe-gestures/",
+          "packageDependencies": [
+            ["react-native-swipe-gestures", "npm:1.0.4"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
       ["react-navigation", [
         ["virtual:5dd2f1855599591e6e11dfbaad2edb684da66f9371f8c1935050893f342ddb16531db25b600a3a1d7d187cf6ee358f658de5b5577034c63f27090b4efd87930a#npm:4.0.10", {
           "packageLocation": "./.yarn/$$virtual/react-navigation-virtual-649ec22ad6/0/cache/react-navigation-npm-4.0.10-7f2236545b-1.zip/node_modules/react-navigation/",
@@ -9821,6 +9831,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:16.9.0"],
             ["react-native", "virtual:5dd2f1855599591e6e11dfbaad2edb684da66f9371f8c1935050893f342ddb16531db25b600a3a1d7d187cf6ee358f658de5b5577034c63f27090b4efd87930a#npm:0.61.5"],
             ["react-native-gesture-handler", "npm:1.5.3"],
+            ["react-native-swipe-gestures", "npm:1.0.4"],
             ["react-navigation", "virtual:5dd2f1855599591e6e11dfbaad2edb684da66f9371f8c1935050893f342ddb16531db25b600a3a1d7d187cf6ee358f658de5b5577034c63f27090b4efd87930a#npm:4.0.10"],
             ["react-test-renderer", "virtual:5dd2f1855599591e6e11dfbaad2edb684da66f9371f8c1935050893f342ddb16531db25b600a3a1d7d187cf6ee358f658de5b5577034c63f27090b4efd87930a#npm:16.9.0"]
           ],

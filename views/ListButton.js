@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  FlatList
+  FlatList,
 } from 'react-native';
 
 import ListItem from './ListItem'
@@ -19,7 +19,7 @@ class ListButton extends Component {
         }
     }
     onPress() {
-        console.log("PRESSED " + this.state.view)
+        //console.log("PRESSED " + this.state.view)
         this.setState({view: !this.state.view});
     }
     render() {

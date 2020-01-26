@@ -5,8 +5,11 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Image
+  Image,
+  FlatList
 } from 'react-native';
+
+import ListItem from './ListItem'
 
 class ListButton extends Component {
     constructor(props) {
@@ -31,11 +34,13 @@ class ListButton extends Component {
                     </View>
                 </TouchableOpacity>
                 {this.state.view && 
-                    <View style={{backgroundColor: "#00FF00"}}>
-                        <Text>
-                            asdfdsafdsagf
-                        </Text>
-                    </View>
+                        <FlatList 
+                        data={this.props.items}
+                        renderItem={({ item }) => (
+                            <ListItem item={item} />
+                        )}
+                        keyExtractor={item => item}
+                    />
                 }
             </>
 

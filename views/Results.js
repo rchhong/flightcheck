@@ -60,6 +60,11 @@ const DATA = [
 ]
 
 class App extends Component {
+    componentDidMount() {
+        let data = this.props.navigation.getParam('rain', false);
+        console.log(data);
+    }
+
   render() {
     return (
       <>

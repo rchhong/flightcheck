@@ -10,9 +10,6 @@ import {
 } from 'react-native';
 
 class Weather extends Component {
-    componentDidMount() {
-        //
-    }
     render() {
 
     }

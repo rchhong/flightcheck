@@ -25,12 +25,12 @@ class ListButton extends Component {
     render() {
         return (
             <>
-                <TouchableOpacity onPress={this.onPress.bind(this)} style={{backgroundColor: "#FFFFFF", flexDirection: "row", alignItems: 'center', justifyContent: 'space-between'}}>
+                <TouchableOpacity onPress={this.onPress.bind(this)} style={{backgroundColor: "#FFFFFF", flexDirection: "row", alignItems: 'center', justifyContent: 'space-between', borderTopColor: "#d3d3d3", borderTopWidth:1, marginTop: 3, marginBottom: 3}}>
                     <View style={{flex: 1}}>
-                        <Image style={{width: 80, height: 80, borderRadius: 40}} source={this.props.source} />
+                        <Image style={{width: 80, height: 80, borderRadius: 30, marginLeft:7, marginTop: 5}} source={this.props.source} />
                     </View>
                     <View style={{flex: 4, alignItems: "center", justifyContent: 'center'}}>
-                        <Text>{this.props.title}</Text>
+                <Text style={{fontFamily:"Verdana", fontSize: 30}}>{this.props.title}</Text>
                     </View>
                 </TouchableOpacity>
                 {this.state.view && 

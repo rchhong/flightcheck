@@ -13,9 +13,9 @@ class WeatherIcon extends Component {
 
         render() {
             return (
-                <View style={{height: "100%", flex: 1, backgroundColor: "#3399cc", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                <View style={{height: "100%", flex: 1, backgroundColor: "white", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                     <Image style={{width: 50, height: 50}} source={this.props.icon} />
-                    <Text>{this.props.weather}</Text>
+                    <Text style={{color: "black", fontFamily:"Verdana", marginTop: 10}}>{this.props.weather}</Text>
                 </View>
             )
         }

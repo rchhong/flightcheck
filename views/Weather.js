@@ -22,8 +22,8 @@ class Weather extends Component {
 
     componentDidMount() {
       console.log(this.props.data);
-      let allCombo = [{"weather" : "Rain", weatherIcon : require('../resources/asdf.jpg')}, {"weather" : "Snows", weatherIcon : require('../resources/asdf.jpg')}];
-      let correct = [{"weather" : `Max: ${this.props.data.max}`, weatherIcon : require('../resources/asdf.jpg')}, {"weather" : `Min: ${this.props.data.min}`, weatherIcon : require('../resources/asdf.jpg')}];
+      let allCombo = [{"weather" : "Rain", weatherIcon : require('../resources/rain.png')}, {"weather" : "Snow", weatherIcon : require('../resources/snow.png')}];
+      let correct = [{"weather" : `Max: ${Math.round(this.props.data.max)} °F`, weatherIcon : require('../resources/hot.png')}, {"weather" : `Min: ${Math.round(this.props.data.min)} °F`, weatherIcon : require('../resources/min.png')}];
 
       if(this.props.data["rain"]) {
         correct.push(allCombo[0]);
@@ -44,7 +44,7 @@ class Weather extends Component {
         <>
         {
           this.state.ready && (
-            <View style={{flex: 1, backgroundColor: "#FFc0cb", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+            <View style={{flex: 1, backgroundColor: "white", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
             {
               this.state.icons.map((item, index) => {
                 return <WeatherIcon weather={item.weather} icon={item.weatherIcon} key={index} />

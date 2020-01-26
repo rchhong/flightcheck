@@ -25,38 +25,38 @@ import Weather from './Weather'
 var data = [
   {
     "title" : "Clothing",
-    "source" : require("../resources/asdf.jpg"),
+    "source" : require("../resources/clothing.png"),
     "items": ["Shirts", "Pants", "Jacket", "Socks", "Underwear", "Pajamas", "Shoes"]
   },
   {
     "title" : "Toiletries",
-    "source" : require("../resources/asdf.jpg"),
+    "source" : require("../resources/toilet.png"),
     "items" : ["Toothbrush", "Toothpaste", "Deodorant", "Comb", "Shampoo", "Conditioner", "Face Wash", "Soap", "Body Wash", "Razor", "Contacts", "Floss", "Contact Solution", "Shaving Cream", "Sunscreen"]
 
   },
   {
     "title" : "Electronics",
-    "source" : require("../resources/asdf.jpg"),
+    "source" : require("../resources/electronics.png"),
     "items" : ["Phone", "Phone Charger", "Laptop", "Laptop Charger", "Headphones", "Portable Charger"]
   },
   {
     "title" : "Misc",
-    "source" : require("../resources/asdf.jpg"),
+    "source" : require("../resources/misc.png"),
     "items" : ["Medicine", "Pain Reliever", "Stomach Medicine", "Glasses", "Hand Sanitizer", "Keys", "Snacks", "Gum"]
   },
   {
     "title" : "Travel Items",
-    "source" : require("../resources/asdf.jpg"),
+    "source" : require("../resources/pp.png"),
     "items" : ["Passport", "Wallet", "Valid ID (Drivers License)", "Plane Ticket", "Neck Pillow"]
   },
   {
-    "title" : "TSA Travel List",
-    "source" : require("../resources/asdf.jpg"),
-    "items" : ["fuck the rules"]
+    "title" : "TSA Ban List",
+    "source" : require("../resources/banned.png"),
+    "items" : ["Meat", "Liquids", "Bombs", "Guns"]
   },
   {
     "title" : "To Do",
-    "source" : require("../resources/asdf.jpg"),
+    "source" : require("../resources/todo.png"),
     "items" : ["Check-in Flight", "Book Uber", "Download shows/movies"]
   }
 ]
@@ -108,13 +108,13 @@ class App extends Component {
         <>
           <StatusBar barStyle="dark-content" />
           <SafeAreaView style={{flex : 1, backgroundColor : "#000000"}}>
-            <View style={{flex: 2, backgroundColor: "#FF0000"}}>
+            <View style={{flex: 2, backgroundColor: "white"}}>
               <TopBar city={this.state.data.city}/>
             </View>
-            <View style={{flex: 1, backgroundColor: "#00FF00"}}>
+            <View style={{flex: 1, backgroundColor: "white"}}>
               <Weather data={this.state.data}/>
             </View>
-            <View style={{flex: 4, backgroundColor: "#0000FF"}}>
+            <View style={{flex: 4, backgroundColor: "white"}}>
               <FlatList 
                 data={data}
                 renderItem={({ item }) => (

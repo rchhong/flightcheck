@@ -16,6 +16,7 @@ import {
   StatusBar,
   TextInput,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 
 
@@ -35,48 +36,43 @@ export default class Home extends Component {
   render() {
     return (
       <KeyboardAvoidingView style={{ flex: 1, flexDirection: "column", alignItems: "center", justifyContent: "center"}} behavior="height" enabled>
-      <SafeAreaView style={{width: "100%", flex: 1, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "#4477cc"}}>
-          <View style={{ width: "100%", flex: 3, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "#9977ee"}}>
-            <Text>asdfadsfsdaf</Text>
+      <SafeAreaView style={{width: "100%", flex: 1, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "white"}}>
+            <View style={{flex: 1}}>
+            </View>
+            
+          <View style={{ width: "100%", flex: 5, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "white"}}>
+            <Image source={require('../resources/travel.png')} style={{width:200, height: 200}} />
           </View>
 
-          <View style={{ width: "100%", flex: 2, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "#00FF00"}}>
+          <View style={{ width: "100%", flex: 2, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "white"}}>
             <Text style={{ fontSize: 25, fontFamily: 'Courier New'}}> Where are you going? </Text>
             <TextInput
-              placeholder="Input your destination"
-              style={{borderWidth: 1, borderRadius: 10, height: 45, width: 200, fontFamily: 'Courier', textAlign: 'center', marginTop: 10}}
+              placeholder="Eg. Houston"
+              style={{borderWidth: 1, borderRadius: 10, height: 45, width: 200, fontFamily: 'Courier', textAlign: 'center', marginTop: 15}}
               onChangeText={(destination) => this.setState({ destination })}
               value={this.state.destination}
             />
           </View>
 
-          {/* <View style={{ borderWidth: 1, borderRadius: 10, marginLeft: 30, marginRight: 30, marginBottom: 30, marginTop: 50 }}>
 
-
-
-          </View> */}
-          <View style={{ width: "100%", flex: 2, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "#FF0000"}}>
+          <View style={{ width: "100%", flex: 2, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "white", marginTop:20}}>
             <Text style={{ fontSize: 25, fontFamily: 'Courier New'}}> When are you going? </Text>
             <DatePicker callback={this.updateState.bind(this)} />
           </View>
 
 
 
-          <View style={{ width: "100%", flex: 2, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor : "#0000FF"}}>
-            <Text style={{ fontSize: 25, fontFamily: 'Courier New'}}> How long are you going for? </Text>
+          <View style={{ width: "100%", flex: 2, flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor : "white"}}>
+            <Text style={{ fontSize: 20, fontFamily: 'Courier New'}}> How long are you going for? </Text>
             <TextInput
-              placeholder="Input the number of days"
+              placeholder="Eg. 2"
               keyboardType="numeric"
-              style={{ marginTop: 10, borderWidth: 1, borderRadius: 10, height: 45, width: 200, fontFamily: 'Courier', textAlign: "center", }}
+              style={{ marginTop: 15, borderWidth: 1, borderRadius: 10, height: 45, width: 200, fontFamily: 'Courier', textAlign: "center", }}
               onChangeText={(days) => this.setState({ days })}
               value={this.state.days}
             />
 
           </View>
-{/* 
-
-          <View style={{ borderWidth: 1, borderRadius: 10, marginLeft: 30, marginRight: 30, marginBottom: 30, marginTop: 50, }}>
-          </View> */}
 
         <View style={{width: "100%", flex: 1, flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
           {/* <Button
@@ -94,8 +90,8 @@ export default class Home extends Component {
               console.log(this.state);
               this.props.navigation.navigate('Loading', this.state)
             }}
-            style={{backgroundColor : "#0000FF", width: "30%", height: 30, alignItems: 'center', justifyContent: 'center'}}>
-            <Text>Submit</Text>
+            style={{backgroundColor : "#5dade2", width: "30%", height: 40, alignItems: 'center', justifyContent: 'center', borderRadius:7}}>
+            <Text style={{fontFamily:"Courier-bold", color: "white", fontSize: 18}}>Submit</Text>
           </TouchableOpacity>
         </View>
 

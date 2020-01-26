@@ -42,8 +42,8 @@ class ListItem extends Component {
             <GestureRecognizer
                 onSwipeLeft={this.onSwipeLeft.bind(this)}
             >
-                <View style={{backgroundColor: "#33663c", height: 50, borderBottomColor: '#555555', borderBottomWidth: 3, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
-                        <Text style={this.state.selected && {textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>{this.props.item}</Text>
+                <View style={{backgroundColor: "white", height: 50, borderTopColor: '#d3d3d3', borderTopWidth: 1, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+                <Text style= {this.state.selected ? {textDecorationLine:'line-through', textDecorationStyle: 'solid', marginLeft: 5, fontFamily: "Verdana"}: {marginLeft: 5, fontFamily: "Verdana"}}>{this.props.item}</Text>
                         <CheckBox
                             value={this.state.selected}
                             onValueChange={this.onPress.bind(this)}
